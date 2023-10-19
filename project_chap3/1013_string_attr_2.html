@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* div 태그 중에서 class 속성값에  '-' 기호는 상관하지 않고 무조건  'apple' 단어가 포함되어 있는지만 검사함. */
+      div[class~='apple'] {
+        color: red;
+      }
+
+      /* div 태그 중에서 class 속성값에  '-' 기호로 구분되어 있을 때 '-' 기호 앞 단어를 선택해서 'box' 단어가 포함되어 있는지 검사함  */
+      div[class|='box'] {
+        color: yellow;
+      }
+      /* img 태그 중에서 src 속성값이 gif로 끝나는 태그의
+           border 속성에 3px solid blue를 적용합니다. */
+      img[src$='gif'] {
+        border: 3px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--<div style="border: 3px solid skyblue;">-->
+    <div class="apple">class apple</div>
+    <div>Lorem ipsum</div>
+    <div class="box-other">class box-other</div>
+    <div class="first-box">Lorem ipsum</div>
+  </body>
+</html>
